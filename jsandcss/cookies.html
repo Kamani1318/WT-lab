@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Example</title>
+</head>
+
+<body>
+    <h1>Cookie Example</h1>
+
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name">
+    <button onclick="saveName()">Save</button>
+
+    <div id="greeting"></div>
+
+    <script>
+        function saveName() {
+            var name = document.getElementById('name').value;
+            document.cookie = "username=" + name;
+            displayGreeting(name);
+        }
+
+        function getCookie(name) {
+            var cookieArr = document.cookie.split(';');
+            for (var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split('=');
+                if (cookiePair[0].trim() === name) {
+                    return cookiePair[1];
+                }
+            }
+            return null;
+        }
+
+        function displayGreeting(name) {
+            var greetingDiv = document.getElementById('greeting');
+            var storedName = getCookie('username');
+
+            if (storedName) {
+                greetingDiv.innerHTML = 'Welcome back, ' + storedName + '!';
+            } else {
+                greetingDiv.innerHTML = 'Hello, ' + name + '!';
+            }
+        }
+
+        // Check if the username cookie exists on page load
+        window.onload = function() {
+            var storedName = getCookie('username');
+            if (storedName) {
+                displayGreeting(storedName);
+            }
+        };
+    </script>
+</body>
+
+</html>

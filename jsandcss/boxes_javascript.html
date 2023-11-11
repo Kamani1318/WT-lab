@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .box {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Boxes</h1>
+
+    <div class="box">
+        <h2>alert()</h2>
+        <p>The <code>alert()</code> method displays an alert box with a specified message and an OK button.</p>
+        <button onclick="showAlert()">Click Me</button>
+    </div>
+
+    <div class="box">
+        <h2>prompt()</h2>
+        <p>The <code>prompt()</code> method displays a dialog box that prompts the visitor for input. It returns a
+            string, or <code>null</code> if the user clicks "Cancel".</p>
+        <button onclick="showPrompt()">Click Me</button>
+    </div>
+
+    <div class="box">
+        <h2>confirm()</h2>
+        <p>The <code>confirm()</code> method displays a dialog box with a specified message and OK and Cancel buttons. It
+            returns a boolean value, <code>true</code> if the user clicks "OK", and <code>false</code> if the user clicks
+            "Cancel".</p>
+        <button onclick="showConfirm()">Click Me</button>
+    </div>
+
+    <script>
+        function showAlert() {
+            alert("This is an alert box!");
+        }
+
+        function showPrompt() {
+            var userInput = prompt("Please enter your name:", "John Doe");
+            if (userInput !== null) {
+                alert("Hello, " + userInput + "!");
+            }
+        }
+
+        function showConfirm() {
+            var result = confirm("Press OK to continue or Cancel to abort.");
+            if (result) {
+                alert("You pressed OK!");
+            } else {
+                alert("You pressed Cancel!");
+            }
+        }
+    </script>
+</body>
+
+</html>

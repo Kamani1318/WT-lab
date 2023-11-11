@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload, View, and Download Files In Django</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styling here */
+        .form-container {
+            margin-top: 50px;
+        }
+        .file-input {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Upload, View and Download Files In Django</h2>
+    
+    <div class="row mt-4">
+        <div class="col-md-6 form-container">
+            <button class="btn btn-success mb-4">Back</button>
+            
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="File name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="File Owner">
+                </div>
+                <div class="file-input">
+                    <input type="file" class="form-control-file" id="pdfFile">
+                    <label for="pdfFile">Choose PDF File</label>
+                </div>
+                <div class="file-input">
+                    <input type="file" class="form-control-file" id="coverImage">
+                    <label for="coverImage">Choose Cover Image</label>
+                </div>
+                
+                <button type="submit" class="btn btn-success btn-block">Add Now</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-info mb-4">Subscribe For MoTechApp</button>
+            <img src="path_to_sports_image.jpg" alt="Sports" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
